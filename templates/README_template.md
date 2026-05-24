@@ -4,13 +4,11 @@
 
 {{ project.description }}
 
-## How To Use This Template
+## How To Use This Repo
 
-1. Copy this template into a new repo for your project.
-2. Update `project_config.yml` with your project metadata and links.
-3. Replace `notebooks/index.html` with your final HTML notebook or dashboard export.
-4. Optionally add small datasets to `data/processed/` and list them under `data.expected_files`.
-5. Run the setup and checks:
+1. Start with `notebooks/index.html` to read the full development story in notebook form.
+2. Use the evidence tables in `data/processed/` to inspect season history, shot profile, on/off context, recent form, and lineup context behind the notebook.
+3. Regenerate the docs and rerun the checks after any data or wording update:
 
 ```bash
 python scripts/init_project.py
@@ -20,9 +18,9 @@ python scripts/publish_check.py
 
 ## Live Project
 
-- HTML Notebook: {{ links.github_pages }}
-- Portfolio Page: {{ links.portfolio_page }}
-- Tableau Public: {{ links.tableau_public }}
+- HTML Notebook: {{ links.github_pages or "Pending GitHub Pages deployment" }}
+- Portfolio Page: {{ links.portfolio_page or "Not published yet" }}
+- Tableau Public: {{ links.tableau_public or "Not used for this project" }}
 
 ## Project Status
 
@@ -30,7 +28,7 @@ python scripts/publish_check.py
 
 ## Why This Project Matters
 
-{{ project_context.problem_statement | default("Add project problem statement.") }}
+Player development reports often flatten growth into one headline. This repo separates Lulu Twidale's role growth, efficiency changes, shot-profile evolution, and on-court context so reviewers can see what improved, what held steady, and what still needs caution.
 
 ## Key Questions
 
@@ -54,6 +52,7 @@ python scripts/publish_check.py
 
 {% for source in methodology.data_sources %}
 - {{ source.name }}{% if source.url %}: {{ source.url }}{% endif %}
+
 {% endfor %}
 
 ## Methodology Summary
@@ -62,7 +61,7 @@ See [`docs/methodology.md`](docs/methodology.md).
 
 ## Validation Summary
 
-See [`docs/validation_report.md`](docs/validation_report.md).
+See [`docs/validation_report.md`](docs/validation_report.md). Current warnings mostly reflect expected missing context fields, including unavailable 2023-24 on/off coverage and season-specific play-by-play sparsity, rather than broken files.
 
 ## Data Dictionary
 

@@ -1,4 +1,4 @@
-# Publishing Checklist: Project Title
+# Publishing Checklist: Lulu Twidale Development Report
 
 ## Pre-Publish Checks
 

@@ -1,17 +1,102 @@
 {
-  "project_title": "Project Title",
-  "run_at": "2026-05-23T18:27:46.100157+00:00",
+  "project_title": "Lulu Twidale Development Report",
+  "run_at": "2026-05-24T17:49:25.917987+00:00",
   "status": "warning",
   "files": [
     {
-      "path": "data/processed/example.csv",
-      "required": false,
-      "description": "Example processed dataset.",
-      "status": "missing"
+      "path": "data/processed/lulu_season_history_2024_2026.csv",
+      "required": true,
+      "description": "Season-level production history for Lulu Twidale across the three California seasons.",
+      "status": "validated",
+      "row_count": 3,
+      "column_count": 62,
+      "duplicate_rows": 0,
+      "missing_columns": [],
+      "missing_pct_by_column": {}
+    },
+    {
+      "path": "data/processed/california_pbp_profile_history_2024_2026.csv",
+      "required": true,
+      "description": "California-scoped play-by-play profile history with shot mix and creation context.",
+      "status": "validated",
+      "row_count": 3,
+      "column_count": 73,
+      "duplicate_rows": 0,
+      "missing_columns": [],
+      "missing_pct_by_column": {
+        "avg_shot_distance": 66.67,
+        "shot_distance_std": 66.67,
+        "clutch_fg_pct": 33.33,
+        "clutch_efg": 33.33,
+        "overtime_games": 33.33,
+        "overtime_fg_pct": 66.67,
+        "overtime_efg": 66.67
+      }
+    },
+    {
+      "path": "data/processed/california_player_onoff_2025_2026.csv",
+      "required": true,
+      "description": "Regular-season on/off summary for the seasons with substitution-event coverage.",
+      "status": "validated",
+      "row_count": 2,
+      "column_count": 85,
+      "duplicate_rows": 0,
+      "missing_columns": [],
+      "missing_pct_by_column": {
+        "q1_opp_off_rtg": 50.0,
+        "q1_opp_def_rtg": 50.0,
+        "q1_opp_net_rtg": 50.0,
+        "q2_opp_off_rtg": 50.0,
+        "q2_opp_def_rtg": 50.0,
+        "q2_opp_net_rtg": 50.0
+      }
+    },
+    {
+      "path": "data/processed/lulu_recent_form_2026.csv",
+      "required": true,
+      "description": "Game-level recent-form table for the 2025-26 season.",
+      "status": "validated",
+      "row_count": 35,
+      "column_count": 45,
+      "duplicate_rows": 0,
+      "missing_columns": [],
+      "missing_pct_by_column": {
+        "game_score_L5": 5.71,
+        "game_score_L10": 11.43,
+        "game_score_L15": 17.14,
+        "ts_pct_L5": 5.71,
+        "ts_pct_L10": 11.43,
+        "improvement_zscore_L10": 11.43,
+        "game_score_slope_L10": 25.71
+      }
+    },
+    {
+      "path": "data/processed/lulu_regular_lineup_summary.csv",
+      "required": true,
+      "description": "Compact regular lineup summary showing the most common groupings around Twidale.",
+      "status": "validated",
+      "row_count": 12,
+      "column_count": 7,
+      "duplicate_rows": 0,
+      "missing_columns": [],
+      "missing_pct_by_column": {}
     }
   ],
   "warnings": [
-    "data/processed/example.csv is missing"
+    "data/processed/california_pbp_profile_history_2024_2026.csv has 66.7% missing values in column 'avg_shot_distance'",
+    "data/processed/california_pbp_profile_history_2024_2026.csv has 66.7% missing values in column 'shot_distance_std'",
+    "data/processed/california_pbp_profile_history_2024_2026.csv has 33.3% missing values in column 'clutch_fg_pct'",
+    "data/processed/california_pbp_profile_history_2024_2026.csv has 33.3% missing values in column 'clutch_efg'",
+    "data/processed/california_pbp_profile_history_2024_2026.csv has 33.3% missing values in column 'overtime_games'",
+    "data/processed/california_pbp_profile_history_2024_2026.csv has 66.7% missing values in column 'overtime_fg_pct'",
+    "data/processed/california_pbp_profile_history_2024_2026.csv has 66.7% missing values in column 'overtime_efg'",
+    "data/processed/california_player_onoff_2025_2026.csv has 50.0% missing values in column 'q1_opp_off_rtg'",
+    "data/processed/california_player_onoff_2025_2026.csv has 50.0% missing values in column 'q1_opp_def_rtg'",
+    "data/processed/california_player_onoff_2025_2026.csv has 50.0% missing values in column 'q1_opp_net_rtg'",
+    "data/processed/california_player_onoff_2025_2026.csv has 50.0% missing values in column 'q2_opp_off_rtg'",
+    "data/processed/california_player_onoff_2025_2026.csv has 50.0% missing values in column 'q2_opp_def_rtg'",
+    "data/processed/california_player_onoff_2025_2026.csv has 50.0% missing values in column 'q2_opp_net_rtg'",
+    "data/processed/lulu_recent_form_2026.csv has 25.7% missing values in column 'game_score_slope_L10'"
   ],
   "errors": []
 }

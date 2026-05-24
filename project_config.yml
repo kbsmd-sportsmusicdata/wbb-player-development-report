@@ -1,15 +1,15 @@
 project:
-  title: "Project Title"
-  slug: "project-slug"
-  subtitle: "Short project subtitle"
-  description: "One-paragraph project description."
-  status: "draft"
+  title: "Lulu Twidale Development Report"
+  slug: "lulu-twidale-development-report"
+  subtitle: "A California player-development notebook tracking role growth, scoring efficiency, and playmaking progression from 2023-24 through 2025-26."
+  description: "This project packages a notebook-style player development report for Lulu Twidale's first three California seasons. It combines season-level production, California-scoped play-by-play profile history, on/off context, recent form, and lineup evidence to show how her role, efficiency, and decision-making evolved from reserve guard to high-minute creator."
+  status: "in-progress"
   sport: "Women's Basketball"
-  league: "WNBA"
-  season: "2026"
+  league: "NCAA Division I"
+  season: "2024-2026"
   author: "Krystal Beasley"
-  created_date: "YYYY-MM-DD"
-  last_updated: "YYYY-MM-DD"
+  created_date: "2026-05-24"
+  last_updated: "2026-05-24"
 
 links:
   github_repo: ""
@@ -25,29 +25,47 @@ outputs:
   report_path: "docs/executive_summary.md"
 
 project_context:
-  problem_statement: "Add project problem statement."
+  problem_statement: "Player development reports often blur role growth, shot quality, and decision-making into a single headline. This repo separates those layers so reviewers can see how Lulu Twidale's California development arc changed by season and by context."
   audience:
+    - "player development and coaching staff"
+    - "basketball operations and scouting reviewers"
     - "sports analytics portfolio reviewers"
-    - "front office decision-makers"
-    - "coaching staff"
   use_cases:
-    - "player evaluation"
-    - "roster analysis"
-    - "data storytelling"
+    - "player development review"
+    - "role and usage evaluation"
+    - "staff-brief storytelling"
   key_questions:
-    - "What question does this project answer?"
-    - "What decision does this analysis support?"
+    - "How did Lulu Twidale's role change from her first California season through 2025-26?"
+    - "Where did the biggest gains show up: efficiency, playmaking, shot mix, or lineup impact?"
+    - "Which parts of the development story are strongest enough to trust, and which parts still need context or caution?"
 
 methodology:
   data_sources:
-    - name: "Source Name"
+    - name: "Lulu season history"
       url: ""
-      notes: ""
+      notes: "Season-level player production table spanning 2023-24 through 2025-26."
+    - name: "California play-by-play profile history"
+      url: ""
+      notes: "California-scoped play-by-play summary used for shot mix, creation, and style context."
+    - name: "California player on/off"
+      url: ""
+      notes: "Regular-season on/off evidence for seasons where substitution events were available in raw play-by-play."
+    - name: "Lulu recent form 2026"
+      url: ""
+      notes: "Game-level 2025-26 trend table used for recent-form and context framing."
+    - name: "Lulu regular lineup summary"
+      url: ""
+      notes: "Compact lineup evidence used to identify the most common California groupings around Twidale."
   cleaning_steps:
-    - "Describe cleaning step."
+    - "Aligned Lulu Twidale and Lulu Laditan-Twidale naming so all three seasons resolve to one player profile."
+    - "Kept the notebook scoped to California seasons only, rather than mixing in broader player-history contexts."
+    - "Limited on/off analysis to seasons with substitution events in raw play-by-play and preserved the 2023-24 availability note explicitly."
+    - "Selected only the notebook-facing evidence tables needed to review development arc, shot profile, on/off, recent form, and lineup context."
   feature_engineering:
-    - "Describe derived metric or feature."
-  modeling_approach: "Describe model or write 'Not applicable'."
+    - "Tracked season-over-season changes in minutes, points per 40, assists per 40, and true shooting percentage."
+    - "Derived shot-share and creator-style context from California play-by-play profile history."
+    - "Used position percentiles and development labels to frame the report as a staff-brief development read rather than a raw stat dump."
+  modeling_approach: "Not applicable. This project is a descriptive player-development and context report, not a predictive model."
   validation_checks:
     - "Row count check"
     - "Missing value check"
@@ -56,25 +74,52 @@ methodology:
 
 metrics:
   primary_metrics:
-    - name: "Metric Name"
-      definition: "Metric definition."
-      interpretation: "How to interpret this metric."
+    - name: "Points per 40"
+      definition: "Points scored normalized to 40 minutes at the season level."
+      interpretation: "Higher values indicate stronger scoring volume independent of raw minutes."
+    - name: "True Shooting Percentage"
+      definition: "Scoring efficiency measure that combines two-point, three-point, and free-throw scoring."
+      interpretation: "Higher values indicate more efficient scoring conversion."
+    - name: "Assists per 40"
+      definition: "Assists normalized to 40 minutes at the season level."
+      interpretation: "Higher values indicate stronger playmaking volume within role."
+    - name: "On-Court Net Rating"
+      definition: "California's points scored minus points allowed per 100 possessions with Twidale on the floor."
+      interpretation: "Higher values indicate stronger team performance in her on-court minutes."
   derived_metrics:
-    - name: "Derived Metric Name"
-      formula: "Formula or calculation logic."
-      interpretation: "How to interpret this metric."
+    - name: "Usage Proxy"
+      formula: "Project-level usage proxy from season-level offensive load indicators."
+      interpretation: "Higher values indicate a larger offensive burden."
+    - name: "Shot Mix Share"
+      formula: "Paint, midrange, three-point, and free-throw shot shares from play-by-play profile history."
+      interpretation: "Shows whether the scoring profile is becoming more balanced, more perimeter-heavy, or more rim-oriented."
+    - name: "Development Status"
+      formula: "Notebook-level developmental label combining trend, efficiency, and year-over-year context."
+      interpretation: "Summarizes whether the current season reads as stable, breakout, stalled, or mixed."
 
 data:
   raw_data_dir: "data/raw"
   processed_data_dir: "data/processed"
   expected_files:
-    - path: "data/processed/example.csv"
-      required: false
-      description: "Example processed dataset."
+    - path: "data/processed/lulu_season_history_2024_2026.csv"
+      required: true
+      description: "Season-level production history for Lulu Twidale across the three California seasons."
+    - path: "data/processed/california_pbp_profile_history_2024_2026.csv"
+      required: true
+      description: "California-scoped play-by-play profile history with shot mix and creation context."
+    - path: "data/processed/california_player_onoff_2025_2026.csv"
+      required: true
+      description: "Regular-season on/off summary for the seasons with substitution-event coverage."
+    - path: "data/processed/lulu_recent_form_2026.csv"
+      required: true
+      description: "Game-level recent-form table for the 2025-26 season."
+    - path: "data/processed/lulu_regular_lineup_summary.csv"
+      required: true
+      description: "Compact regular lineup summary showing the most common groupings around Twidale."
   required_columns: []
 
 validation:
-  fail_on_missing_required_files: false
+  fail_on_missing_required_files: true
   fail_on_duplicate_rows: false
   fail_on_missing_values: false
   max_missing_pct_warning: 20
@@ -88,6 +133,10 @@ publishing:
 
 notes:
   limitations:
-    - "List known limitation."
+    - "2023-24 regular-season on/off is unavailable because the raw play-by-play snapshot lacks substitution events."
+    - "This repo ships reviewable evidence tables, not the full wbb-bis pipeline or raw play-by-play archive."
+    - "On/off and lineup context are California-scoped and should be read as team-context evidence rather than a complete player-isolation model."
   next_steps:
-    - "List next step."
+    - "Publish the notebook through GitHub Pages and backfill the live URL into this config."
+    - "Decide whether the public repo should also include a simplified dashboard export or remain notebook-first."
+    - "Apply the same repo workflow to another player or team development report once this project is live."
