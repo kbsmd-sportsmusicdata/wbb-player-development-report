@@ -1,0 +1,93 @@
+project:
+  title: "Project Title"
+  slug: "project-slug"
+  subtitle: "Short project subtitle"
+  description: "One-paragraph project description."
+  status: "draft"
+  sport: "Women's Basketball"
+  league: "WNBA"
+  season: "2026"
+  author: "Krystal Beasley"
+  created_date: "YYYY-MM-DD"
+  last_updated: "YYYY-MM-DD"
+
+links:
+  github_repo: ""
+  github_pages: ""
+  portfolio_page: ""
+  tableau_public: ""
+  notion_page: ""
+
+outputs:
+  primary_deliverable: "HTML notebook"
+  notebook_path: "notebooks/index.html"
+  dashboard_path: ""
+  report_path: "docs/executive_summary.md"
+
+project_context:
+  problem_statement: "Add project problem statement."
+  audience:
+    - "sports analytics portfolio reviewers"
+    - "front office decision-makers"
+    - "coaching staff"
+  use_cases:
+    - "player evaluation"
+    - "roster analysis"
+    - "data storytelling"
+  key_questions:
+    - "What question does this project answer?"
+    - "What decision does this analysis support?"
+
+methodology:
+  data_sources:
+    - name: "Source Name"
+      url: ""
+      notes: ""
+  cleaning_steps:
+    - "Describe cleaning step."
+  feature_engineering:
+    - "Describe derived metric or feature."
+  modeling_approach: "Describe model or write 'Not applicable'."
+  validation_checks:
+    - "Row count check"
+    - "Missing value check"
+    - "Duplicate check"
+    - "Schema check"
+
+metrics:
+  primary_metrics:
+    - name: "Metric Name"
+      definition: "Metric definition."
+      interpretation: "How to interpret this metric."
+  derived_metrics:
+    - name: "Derived Metric Name"
+      formula: "Formula or calculation logic."
+      interpretation: "How to interpret this metric."
+
+data:
+  raw_data_dir: "data/raw"
+  processed_data_dir: "data/processed"
+  expected_files:
+    - path: "data/processed/example.csv"
+      required: false
+      description: "Example processed dataset."
+  required_columns: []
+
+validation:
+  fail_on_missing_required_files: false
+  fail_on_duplicate_rows: false
+  fail_on_missing_values: false
+  max_missing_pct_warning: 20
+
+publishing:
+  deploy_github_pages: true
+  pages_source: "notebooks/index.html"
+  include_validation_badge: true
+  include_methodology_link: true
+  include_data_dictionary_link: true
+
+notes:
+  limitations:
+    - "List known limitation."
+  next_steps:
+    - "List next step."

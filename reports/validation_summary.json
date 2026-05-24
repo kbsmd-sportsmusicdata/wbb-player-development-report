@@ -1,0 +1,17 @@
+{
+  "project_title": "Project Title",
+  "run_at": "2026-05-23T18:27:46.100157+00:00",
+  "status": "warning",
+  "files": [
+    {
+      "path": "data/processed/example.csv",
+      "required": false,
+      "description": "Example processed dataset.",
+      "status": "missing"
+    }
+  ],
+  "warnings": [
+    "data/processed/example.csv is missing"
+  ],
+  "errors": []
+}
