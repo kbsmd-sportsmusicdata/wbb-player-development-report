@@ -18,13 +18,13 @@ python scripts/publish_check.py
 
 ## Live Project
 
-- HTML Notebook: Pending GitHub Pages deployment
+- HTML Notebook: https://kbsmd-sportsmusicdata.github.io/wbb-player-development-report/
 - Portfolio Page: Not published yet
 - Tableau Public: Not used for this project
 
 ## Project Status
 
-in-progress
+published
 
 ## Why This Project Matters
 
@@ -91,6 +91,6 @@ python scripts/generate_readme.py
 
 ## Next Steps
 
-- Publish the notebook through GitHub Pages and backfill the live URL into this config.
-- Decide whether the public repo should also include a simplified dashboard export or remain notebook-first.
-- Apply the same repo workflow to another player or team development report once this project is live.
+- Review whether a simplified dashboard companion would add value or whether the notebook should remain the only public surface.
+- Reuse the same template workflow for another player or team development report.
+- Decide whether to add branch protection on main after the repo settles.

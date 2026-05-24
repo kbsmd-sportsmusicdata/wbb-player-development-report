@@ -2,7 +2,7 @@
 
 ## Current Status
 
-in-progress
+published
 
 ## Project Purpose
 
@@ -33,9 +33,9 @@ This project packages a notebook-style player development report for Lulu Twidal
 
 ## Next Steps
 
-- Publish the notebook through GitHub Pages and backfill the live URL into this config.
-- Decide whether the public repo should also include a simplified dashboard export or remain notebook-first.
-- Apply the same repo workflow to another player or team development report once this project is live.
+- Review whether a simplified dashboard companion would add value or whether the notebook should remain the only public surface.
+- Reuse the same template workflow for another player or team development report.
+- Decide whether to add branch protection on main after the repo settles.
 
 ## Deployment Notes
 

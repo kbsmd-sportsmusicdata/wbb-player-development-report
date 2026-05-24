@@ -3,7 +3,7 @@ project:
   slug: "lulu-twidale-development-report"
   subtitle: "A California player-development notebook tracking role growth, scoring efficiency, and playmaking progression from 2023-24 through 2025-26."
   description: "This project packages a notebook-style player development report for Lulu Twidale's first three California seasons. It combines season-level production, California-scoped play-by-play profile history, on/off context, recent form, and lineup evidence to show how her role, efficiency, and decision-making evolved from reserve guard to high-minute creator."
-  status: "in-progress"
+  status: "published"
   sport: "Women's Basketball"
   league: "NCAA Division I"
   season: "2024-2026"
@@ -12,8 +12,8 @@ project:
   last_updated: "2026-05-24"
 
 links:
-  github_repo: ""
-  github_pages: ""
+  github_repo: "https://github.com/kbsmd-sportsmusicdata/wbb-player-development-report"
+  github_pages: "https://kbsmd-sportsmusicdata.github.io/wbb-player-development-report/"
   portfolio_page: ""
   tableau_public: ""
   notion_page: ""
@@ -137,6 +137,6 @@ notes:
     - "This repo ships reviewable evidence tables, not the full wbb-bis pipeline or raw play-by-play archive."
     - "On/off and lineup context are California-scoped and should be read as team-context evidence rather than a complete player-isolation model."
   next_steps:
-    - "Publish the notebook through GitHub Pages and backfill the live URL into this config."
-    - "Decide whether the public repo should also include a simplified dashboard export or remain notebook-first."
-    - "Apply the same repo workflow to another player or team development report once this project is live."
+    - "Review whether a simplified dashboard companion would add value or whether the notebook should remain the only public surface."
+    - "Reuse the same template workflow for another player or team development report."
+    - "Decide whether to add branch protection on main after the repo settles."
