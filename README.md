@@ -1,8 +1,18 @@
 # Lulu Twidale Development Report
 
-**A California player-development notebook tracking role growth, scoring efficiency, and playmaking progression from 2023-24 through 2025-26.**
+**A WBB player development notebook tracking role growth, scoring efficiency, and playmaking progression from 2023-24 through 2025-26. Player development profile: Lulu Twidale (Cal)**
 
-This project packages a notebook-style player development report for Lulu Twidale's first three California seasons. It combines season-level production, California-scoped play-by-play profile history, on/off context, recent form, and lineup evidence to show how her role, efficiency, and decision-making evolved from reserve guard to high-minute creator.
+This project packages a notebook-style player development report for Lulu Twidale's first three California seasons. It combines season-level production, Cal play-by-play profile history, on/off context, recent form, and lineup evidence to show how her role, efficiency, and decision-making evolved from reserve guard to high-minute creator.
+
+## Preview
+
+<p align="center">
+  <img src="assets/lulu_development_report_preview.png" alt="Lulu Twidale WBB player development report preview showing profile card, role growth, scoring efficiency, and development signals" width="850">
+</p>
+
+<p align="center">
+  <img src="assets/lulu_development_report_preview_radar_profile_viz.png" alt="Lulu Twidale WBB development report preview showing multi-season trajectory assessment, scouting viewpoint, and radar profile comparing 2023-24 baseline to 2025-26 breakout" width="850">
+</p>
 
 ## How To Use This Repo
 
@@ -18,9 +28,8 @@ python scripts/publish_check.py
 
 ## Live Project
 
-- HTML Notebook: https://kbsmd-sportsmusicdata.github.io/wbb-player-development-report/
-- Portfolio Page: Not published yet
-- Tableau Public: Not used for this project
+- **HTML Notebook**: https://kbsmd-sportsmusicdata.github.io/wbb-player-development-report/
+- **GitHub Repo:** https://github.com/kbsmd-sportsmusicdata/wbb-player-development-report
 
 ## Project Status
 
@@ -48,13 +57,13 @@ Player development reports often flatten growth into one headline. This repo sep
 - Notebook path: `notebooks/index.html`
 - Report path: `docs/executive_summary.md`
 
-## Data Sources
+## Supporting Evidence Tables
 
-- Lulu season history
-- California play-by-play profile history
-- California player on/off
-- Lulu recent form 2026
-- Lulu regular lineup summary
+- `data/processed/lulu_season_history.csv`: season-level role, scoring, efficiency, and usage progression.
+- `data/processed/california_pbp_profile_history.csv`: play-by-play-derived profile history and shot/creation context.
+- `data/processed/california_player_on_off.csv`: on/off context for lineup impact evaluation.
+- `data/processed/lulu_recent_form_2026.csv`: recent-game form and late-season performance context.
+- `data/processed/lulu_regular_lineup_summary.csv`: lineup context and regular rotation evidence.
 
 ## Methodology Summary
 
@@ -89,8 +98,9 @@ python scripts/validate_data.py
 python scripts/generate_readme.py
 ```
 
-## Next Steps
+## Future Extensions
 
-- Review whether a simplified dashboard companion would add value or whether the notebook should remain the only public surface.
-- Reuse the same template workflow for another player or team development report.
-- Decide whether to add branch protection on main after the repo settles.
+- Add a one-page printable player development brief for coaching or scouting review
+- Reuse the same reporting template for additional WBB players or team-development profiles
+- Add a lightweight comparison layer against similar high-minute guards
+- Refresh the notebook after the 2026-27 season closes with final season totals
