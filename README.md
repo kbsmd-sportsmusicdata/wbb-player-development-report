@@ -1,8 +1,8 @@
 # Lulu Twidale Development Report
 
-**A WBB player development notebook tracking role growth, scoring efficiency, and playmaking progression from 2023-24 through 2025-26. Player development profile: Lulu Twidale (Cal)**
+**A WBB player development profile tracking Lulu Twidale’s role growth, scoring efficiency, and playmaking progression at Cal from 2023-24 through 2025-26.**
 
-This project packages a notebook-style player development report for Lulu Twidale's first three California seasons. It combines season-level production, Cal play-by-play profile history, on/off context, recent form, and lineup evidence to show how her role, efficiency, and decision-making evolved from reserve guard to high-minute creator.
+This project packages a notebook-style player development report for Lulu Twidale's first three California seasons. It combines season-level production, team and player play-by-play profile history, on/off context, recent form, and lineup evidence to show how her role, efficiency, decision-making, and overall skill development evolved from reserve guard to high-minute creator.
 
 ## Preview
 
@@ -33,7 +33,7 @@ python scripts/publish_check.py
 
 ## Project Status
 
-published
+Published
 
 ## Why This Project Matters
 
@@ -47,9 +47,10 @@ Player development reports often flatten growth into one headline. This repo sep
 
 ## Audience
 
-- player development and coaching staff
-- basketball operations and scouting reviewers
-- sports analytics portfolio reviewers
+- Player development and coaching staff
+- Basketball operations and scouting reviewers
+- Front office
+- WNBA analytics departments
 
 ## Project Outputs
 
