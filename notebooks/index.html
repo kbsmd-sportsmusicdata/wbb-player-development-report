@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lulu Twidale - WBB Player Development Portfolio</title>
     
-    <!-- Google Fonts: Inter for crisp readability -->
+    <!-- Google Fonts: Inter (Crisp sans), Permanent Marker (Bold handwritten notes), & Caveat (Fluid coaching loops) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Inter:wght@300;400;500;600;700;800;900&family=Permanent+Marker&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -25,6 +25,8 @@
                 extend: {
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
+                        marker: ['"Permanent Marker"', 'cursive'],
+                        scouting: ['"Caveat"', 'cursive'],
                     },
                     colors: {
                         // Timeline Progression Color Strategy
@@ -57,6 +59,13 @@
         .scrollbar-none {
             -ms-overflow-style: none;
             scrollbar-width: none;
+        }
+
+        /* Tooltip custom styling trigger */
+        .tooltip-trigger:hover .tooltip-box {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -111,33 +120,68 @@
                     <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Class</p>
                     <p class="text-sm font-bold text-white mt-0.5">Senior</p>
                 </div>
-                <div class="text-center md:text-left">
-                    <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Portal Status</p>
-                    <p class="text-sm font-bold text-white mt-0.5">Home-Grown (4)</p>
+                
+                <!-- Portal Status with Interactive Styled Tooltip -->
+                <div class="text-center md:text-left relative tooltip-trigger cursor-pointer group">
+                    <div class="flex items-center justify-center md:justify-start gap-1">
+                        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Portal Status</p>
+                        <i data-lucide="help-circle" class="w-3.5 h-3.5 text-slate-400 group-hover:text-[#FDB515] transition-colors"></i>
+                    </div>
+                    <p class="text-sm font-bold text-[#B6C49C] mt-0.5 underline decoration-dotted decoration-[#B6C49C]/40 underline-offset-2">Home-Grown (4)</p>
+                    
+                    <!-- Floating Tooltip Box -->
+                    <div class="tooltip-box absolute z-50 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 bottom-full mb-3 w-64 p-3 bg-slate-900 text-slate-200 text-[11px] leading-relaxed rounded-xl shadow-xl border border-slate-700 opacity-0 visibility-hidden transition-all duration-200 transform translate-y-2 pointer-events-none">
+                        <strong class="text-white block font-bold mb-1">Roster Concept: Home-Grown</strong>
+                        Player has not used the transfer portal as of the data last updated date. Current school affiliation maintained and committed for the number of years in parentheses.<br>
+                        <span class="text-[#FDB515] mt-1 block font-semibold">&bull; Twidale = 4 years played at Cal</span>
+                        <div class="absolute top-full left-1/2 md:left-6 -translate-x-1/2 border-8 border-transparent border-t-slate-900"></div>
+                    </div>
                 </div>
-                <div class="text-center md:text-left">
+
+                <div class="text-center md:text-left col-span-1 md:col-span-2">
                     <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Birthplace</p>
                     <p class="text-sm font-bold text-white mt-0.5 leading-snug">Sunshine Coast, QLD</p>
                 </div>
-                <div class="text-center md:text-left">
+                <div class="text-center md:text-left col-span-2 md:col-span-3">
                     <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Team Affiliation</p>
                     <p class="text-sm font-bold text-[#FDB515] mt-0.5">California Golden Bears</p>
                 </div>
+
+                <!-- Added Primary Role in compliance with the layout restructure -->
+                <div class="text-center md:text-left col-span-2 md:col-span-3 border-t border-white/10 pt-2.5 mt-1">
+                    <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Primary Role</p>
+                    <p class="text-sm font-bold text-white mt-0.5">Off-Spacer &rarr; Scoring Playmaker</p>
+                </div>
             </div>
 
-            <!-- RIGHT: Executive Metadata -->
-            <div class="flex flex-col gap-2 shrink-0 bg-[#1E2E3B]/60 p-4 rounded-2xl border border-white/5 w-full lg:w-auto">
-                <div class="flex items-center gap-2 text-xs font-medium text-slate-300">
-                    <i data-lucide="award" class="w-4 h-4 text-y1 shrink-0"></i>
-                    <span>Target Audience: WBB Front Office & Staff</span>
+            <!-- RIGHT: Honors, Awards & Career Records Card -->
+            <div class="flex flex-col gap-2 shrink-0 bg-black/15 p-4 rounded-2xl border border-white/10 w-full lg:max-w-xs xl:max-w-sm">
+                <div class="flex items-center gap-2 border-b border-white/10 pb-2 mb-1">
+                    <i data-lucide="trophy" class="w-4 h-4 text-[#FDB515] shrink-0"></i>
+                    <h3 class="text-xs font-black uppercase tracking-wider text-slate-200">Honors & Records</h3>
                 </div>
-                <div class="flex items-center gap-2 text-xs font-medium text-slate-300">
-                    <i data-lucide="database" class="w-4 h-4 text-y1 shrink-0"></i>
-                    <span>Source: Verified Python EDA & Synergies</span>
-                </div>
-                <div class="flex items-center gap-2 text-xs font-medium text-slate-300">
-                    <i data-lucide="map-pin" class="w-4 h-4 text-y1 shrink-0"></i>
-                    <span>Primary Role: Off-Spacer &rarr; Scoring Playmaker</span>
+                <div class="space-y-1.5 text-[11px] font-medium leading-normal">
+                    <!-- Moved 2024-25 Preseason Watchlist to the top row -->
+                    <div class="flex items-start gap-1.5 text-slate-300">
+                        <span class="font-extrabold text-[#85A3A6] shrink-0">[2024-25]</span>
+                        <span>Ann Meyers Drysdale Preseason Watchlist</span>
+                    </div>
+                    <div class="flex items-start gap-1.5 text-slate-300">
+                        <span class="font-extrabold text-[#B6C49C] shrink-0">[2025-26]</span>
+                        <span>All-ACC Second Team</span>
+                    </div>
+                    <div class="flex items-start gap-1.5 text-slate-300">
+                        <span class="font-extrabold text-[#B6C49C] shrink-0">[2025-26]</span>
+                        <span>Ranked 5th in NCAA for Season 3PM</span>
+                    </div>
+                    <div class="flex items-start gap-1.5 text-slate-300">
+                        <span class="font-extrabold text-[#B6C49C] shrink-0">[2025-26]</span>
+                        <span>Led ACC in Free Throw % (87.9%)</span>
+                    </div>
+                    <div class="flex items-start gap-1.5 text-slate-300">
+                        <span class="font-extrabold text-[#FDB515] shrink-0">[Cal Career]</span>
+                        <span>3-Point Field Goals Made - 1st (236)</span>
+                    </div>
                 </div>
             </div>
 
@@ -228,8 +272,10 @@
                     <a href="#lineup-impact" class="nav-tab px-3 py-1.5 rounded-lg text-sm font-bold text-slate-600 hover:text-y3 transition-all duration-200 border-b-2 border-transparent hover:border-y3/20">Lineup Impact</a>
                     <a href="#trust-monitor" class="nav-tab px-3 py-1.5 rounded-lg text-sm font-bold text-slate-600 hover:text-y3 transition-all duration-200 border-b-2 border-transparent hover:border-y3/20">Executive Guidance</a>
                 </div>
-                <div class="hidden md:flex items-center gap-2 text-xs font-bold text-slate-400 uppercase tracking-wider pr-2">
-                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span> Visual Storyboard Enabled
+                
+                <div class="hidden md:flex items-center gap-2 text-xs font-bold text-slate-500 uppercase tracking-wider pr-2 text-right">
+                    <i data-lucide="calendar" class="w-4 h-4 text-y3"></i>
+                    <span>Data Last Updated 5/20/2026</span>
                 </div>
             </div>
         </div>
@@ -295,12 +341,19 @@
                 <p class="text-sm text-slate-500 mt-2">Quantitative Skill Diversification Analysis</p>
             </div>
 
-            <!-- SUB-SECTION A: SHOT MIX -->
+            <!-- SUB-SECTION A: SHOT MIX & SHOT EFFICIENCY -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div class="space-y-4 flex flex-col justify-between">
+                <div class="space-y-4 flex flex-col justify-between relative">
                     <div>
-                        <h3 class="text-lg font-bold text-slate-800">Rim & Line Pressure Replaces Extreme Off-Ball Reliance</h3>
-                        <p class="text-slate-600 leading-relaxed text-sm mt-2">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                            <h3 class="text-lg font-bold text-slate-800 font-sans tracking-tight">Rim & Line Pressure Replaces Extreme Off-Ball Reliance</h3>
+                            <!-- DUAL AXIS CONTROLLER FOR THE MULTI-SEASON DIET -->
+                            <div class="inline-flex bg-slate-100 p-1 rounded-xl border border-slate-200 shrink-0 self-start sm:self-center">
+                                <button onclick="changeShotView('share')" id="btn-view-share" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-white text-y3 shadow-sm transition-all">Shot Share (%)</button>
+                                <button onclick="changeShotView('eff')" id="btn-view-eff" class="px-3 py-1.5 rounded-lg text-xs font-bold text-slate-500 hover:text-y3 transition-all">Shot Efficiency (eFG%)</button>
+                            </div>
+                        </div>
+                        <p id="shot-desc" class="text-slate-600 leading-relaxed text-sm mt-2">
                             While still an elite perimeter threat, her dependence on the 3-point ball shrank from 
                             <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-extrabold bg-y1 text-white shadow-sm">2023-24</span> 
                             to 
@@ -311,34 +364,44 @@
                     
                     <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200/80 space-y-2">
                         <div class="flex justify-between items-center text-xs font-semibold text-slate-600 border-b border-slate-200/60 pb-1.5">
-                            <span>Shot Selection Phase</span>
-                            <span>3-Point Share</span>
-                            <span>Mid-Range</span>
-                            <span>Rim/Paint</span>
+                            <span id="header-type">Metric Matrix Profile</span>
+                            <span id="lbl-col1">3-Point</span>
+                            <span id="lbl-col2">Mid-Range</span>
+                            <span id="lbl-col3">Rim/Paint</span>
                         </div>
                         <div class="flex justify-between items-center text-xs font-bold text-slate-800 mt-1">
                             <span class="text-y1">2023-24 (Y1)</span>
-                            <span>61.8%</span>
-                            <span>20.7%</span>
-                            <span>17.5%</span>
+                            <span id="val-y1-1">61.8%</span>
+                            <span id="val-y1-2">20.7%</span>
+                            <span id="val-y1-3">17.5%</span>
                         </div>
                         <div class="flex justify-between items-center text-xs font-bold text-slate-800">
                             <span class="text-y3">2025-26 (Y3)</span>
-                            <span>53.9%</span>
-                            <span>23.7%</span>
-                            <span>22.4%</span>
+                            <span id="val-y3-1">53.9%</span>
+                            <span id="val-y3-2">23.7%</span>
+                            <span id="val-y3-3">22.4%</span>
                         </div>
                     </div>
 
-                    <div class="h-[220px] w-full flex items-center justify-center relative">
+                    <!-- Chart Container with Repositioned Handwritten Coaching Overlay (Shifted down, text/elements changed to green) -->
+                    <div class="h-[220px] w-full flex items-center justify-center relative bg-white/50 rounded-2xl border border-dashed border-slate-150 p-2">
                         <canvas id="shotMixChart"></canvas>
+                        
+                        <!-- REPOSITIONED & COLOR-UPDATED HANDWRITTEN COACHING NOTE FOR VISUAL A (Now closer to bottom horizontal bar, styled in green) -->
+                        <div id="coach-note-a" class="absolute bottom-2 right-2 pointer-events-none transform rotate-[-1.5deg] bg-yellow-50/95 border border-yellow-200/80 px-2.5 py-1.5 rounded-lg shadow-md max-w-[155px] text-center transition-all duration-300 z-10">
+                            <div class="flex items-center justify-center gap-1 text-[#4F5D2F]">
+                                <i data-lucide="trending-up" class="w-3.5 h-3.5 shrink-0 stroke-[3px]"></i>
+                                <span id="note-a-val" class="font-marker text-xs leading-none">+4.9%</span>
+                            </div>
+                            <span id="note-a-text" class="font-scouting text-[11px] font-bold text-slate-700 leading-none block mt-0.5">Paint Share Expansion</span>
+                        </div>
                     </div>
                 </div>
 
                 <!-- SUB-SECTION B: CREATION SHIFT -->
-                <div class="space-y-4 flex flex-col justify-between">
+                <div class="space-y-4 flex flex-col justify-between relative">
                     <div>
-                        <h3 class="text-lg font-bold text-slate-800">Earning the "Scoring Playmaker" Label</h3>
+                        <h3 class="text-lg font-bold text-slate-800 font-sans tracking-tight">Earning the "Scoring Playmaker" Label</h3>
                         <p class="text-slate-600 leading-relaxed text-sm mt-2">
                             Her unassisted make rate surged to 41.2% in 
                             <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-extrabold bg-y3 text-white shadow-sm">2025-26</span>, 
@@ -358,8 +421,18 @@
                         </div>
                     </div>
 
-                    <div class="h-[220px] w-full flex items-center justify-center relative">
+                    <!-- Chart Container with Elevated Handwritten Coaching Overlay (Swapped to directional trending-up icon, colored in green) -->
+                    <div class="h-[220px] w-full flex items-center justify-center relative bg-white/50 rounded-2xl border border-dashed border-slate-150 p-2">
                         <canvas id="creationChart"></canvas>
+                        
+                        <!-- ELEVATED, RE-ICONED, & GREEN-COLORED HANDWRITTEN COACHING NOTE FOR VISUAL B -->
+                        <div id="coach-note-b" class="absolute -top-3 -right-1 pointer-events-none transform rotate-[-1deg] bg-yellow-50/95 border border-yellow-200/80 px-2.5 py-1.5 rounded-lg shadow-md max-w-[155px] text-center z-10">
+                            <div class="flex items-center justify-center gap-1 text-[#4F5D2F]">
+                                <i data-lucide="trending-up" class="w-3.5 h-3.5 shrink-0 stroke-[3px]"></i>
+                                <span class="font-marker text-xs leading-none">+13.6%</span>
+                            </div>
+                            <span class="font-scouting text-[11px] font-bold text-slate-700 leading-none block mt-0.5">Self-Creation Surge</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -372,9 +445,27 @@
                 <p class="text-sm text-slate-500 mt-2">Decisive Efficiency vs. Scaling Usage Metric Map</p>
             </div>
 
+            <!-- Context Percentiles Alert Banner (Added fire emoji to the 91st Percentile indicator) -->
+            <div class="bg-slate-50 border border-slate-200/60 p-4 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
+                <div class="flex items-center gap-2.5">
+                    <span class="p-2 bg-y3/10 text-y3 rounded-xl">
+                        <i data-lucide="shield-alert" class="w-5 h-5"></i>
+                    </span>
+                    <div>
+                        <strong class="text-slate-800 font-bold block">Guard Positional Benchmarks (NCAA)</strong>
+                        <span class="text-slate-500">How Lulu's efficiency measures specifically against positional peers rather than broad league averages.</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-2.5 py-1 bg-white border border-slate-200 rounded-lg text-slate-700 font-bold">Y2 TS% (58.0%): <span class="text-y3 font-extrabold">91st %ile 🔥</span></span>
+                    <span class="px-2.5 py-1 bg-white border border-slate-200 rounded-lg text-slate-700 font-bold">Y3 TS% (54.3%): <span class="text-y2 font-extrabold">73rd %ile</span></span>
+                    <span class="px-2.5 py-1 bg-white border border-slate-200 rounded-lg text-slate-700 font-bold">Y3 TOV% (3.6/40): <span class="text-amber-700 font-extrabold">39th %ile</span></span>
+                </div>
+            </div>
+
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div class="lg:col-span-4 space-y-4">
-                    <h3 class="text-lg font-bold text-slate-800 leading-snug">
+                    <h3 class="text-lg font-bold text-slate-800 leading-snug font-sans tracking-tight">
                         <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-extrabold bg-y2 text-white shadow-sm">2024-25</span> 
                         Efficiency Peak Gives Way to 
                         <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-extrabold bg-y3 text-white shadow-sm">2025-26</span> 
@@ -385,14 +476,23 @@
                         Absorbing a massive playmaking and turnover load in Year 3 resulted in a minor efficiency tax compared to her remarkably clean 58.0% TS peak in Year 2.
                     </p>
 
-                    <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 text-xs text-slate-600 space-y-2.5">
-                        <div class="flex items-center gap-1.5 font-bold text-slate-700">
-                            <i data-lucide="info" class="w-4 h-4 text-y3"></i>
-                            <span>Decoding the Visual Bubble Size</span>
+                    <!-- Explanatory Context Cards highlighting Percentile Meanings -->
+                    <div class="space-y-3 pt-2">
+                        <div class="p-3 bg-emerald-50/50 rounded-xl border border-emerald-100 flex gap-2.5 items-start">
+                            <span class="text-[#4F5D2F] mt-0.5 shrink-0 font-bold text-xs bg-[#4F5D2F]/10 px-1.5 py-0.5 rounded font-sans">91st</span>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-800 font-sans">Sophomore Efficiency Peak</h4>
+                                <p class="text-[11px] text-slate-600 mt-0.5 leading-relaxed">Her 58.0% TS represents elite, national-tier scoring productivity while operating primarily inside off-ball spacing actions.</p>
+                            </div>
                         </div>
-                        <p class="leading-relaxed">
-                            The diameter of each bubble matches her <strong>Turnover Proxy %</strong>. Observe how the bubble expands from Year 1 to Year 3, reflecting the rising structural pressure on her playmaking.
-                        </p>
+
+                        <div class="p-3 bg-amber-50/50 rounded-xl border border-amber-100 flex gap-2.5 items-start">
+                            <span class="text-amber-800 mt-0.5 shrink-0 font-bold text-xs bg-amber-100 px-1.5 py-0.5 rounded font-sans">73rd</span>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-800 font-sans">Junior Playmaking Heavy Burden</h4>
+                                <p class="text-[11px] text-slate-600 mt-0.5 leading-relaxed">Even under a heavy 29.5% Usage Load, her 54.3% TS remains well above the 70th percentile positional average for guards.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -413,7 +513,7 @@
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div class="lg:col-span-5 space-y-4">
-                    <h3 class="text-lg font-bold text-slate-800">
+                    <h3 class="text-lg font-bold text-slate-800 font-sans tracking-tight">
                         <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-extrabold bg-y2 text-white shadow-sm">2024-25</span> 
                         Offensive Lift Transitions to 
                         <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-extrabold bg-y3 text-white shadow-sm">2025-26</span> 
@@ -445,97 +545,166 @@
             </div>
         </section>
 
-        <!-- SECTION 5: TRUST VS MONITOR FRAMEWORK -->
+        <!-- SECTION 5: TRUST VS MONITOR FRAMEWORK - MODERN 2X2 GRID -->
         <section id="trust-monitor" class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-6">
             <div class="border-b border-slate-100 pb-4">
                 <h2 class="text-2xl font-black text-slate-900 tracking-tight leading-none">Executive Guidance: Bank the Growth, Monitor the Nuance</h2>
-                <p class="text-sm text-slate-500 mt-2">Transparent Coaching & Scouting Checklist</p>
+                <p class="text-sm text-slate-500 mt-2">Transparent Coaching, Scouting, & Analytical Data Matrix</p>
             </div>
 
+            <!-- Modern 2x2 Grid Layout for Visual Continuity and High Informational Density -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- WHAT TO TRUST CARD -->
+                
+                <!-- CARD 1: WHAT TO TRUST (SUCCESS STATE) -->
                 <div class="bg-[#4F5D2F]/5 p-6 rounded-2xl border border-[#4F5D2F]/20 shadow-sm space-y-4">
                     <div class="flex items-center gap-3 border-b border-[#4F5D2F]/20 pb-3">
                         <span class="w-10 h-10 rounded-full bg-[#4F5D2F]/10 flex items-center justify-center text-[#4F5D2F]">
                             <i data-lucide="check-circle" class="w-5 h-5"></i>
                         </span>
                         <div>
-                            <h3 class="font-extrabold text-[#4F5D2F] text-base">Trust the Structural Role Expansion</h3>
+                            <h3 class="font-extrabold text-[#4F5D2F] text-base font-sans tracking-tight">Trust the Structural Role Expansion</h3>
                             <p class="text-xs text-[#4F5D2F]/80">Validated Multi-Season Constants</p>
                         </div>
                     </div>
 
                     <ul class="space-y-4 text-xs text-[#333C1F] leading-relaxed">
                         <li class="flex items-start gap-2.5">
-                            <span class="w-1.5 h-1.5 rounded-full bg-[#4F5D2F] mt-1.5 shrink-0"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#4F5D2F] shrink-0 mt-1"></span>
                             <div>
                                 <strong class="font-bold">Durable Role Scale:</strong> 
                                 Three consecutive seasons of scaling structural responsibility confirms that this development arc is built on core work habits and physical progression, not a brief hot shooting streak.
                             </div>
                         </li>
                         <li class="flex items-start gap-2.5">
-                            <span class="w-1.5 h-1.5 rounded-full bg-[#4F5D2F] mt-1.5 shrink-0"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#4F5D2F] shrink-0 mt-1"></span>
                             <div>
                                 <strong class="font-bold">Shot Profile Maturity:</strong> 
                                 The dramatic transition away from strict off-ball spacing to deliberate paint penetrations and line trips represents a real, repeatable weapon in half-court tracking metrics.
                             </div>
                         </li>
                         <li class="flex items-start gap-2.5">
-                            <span class="w-1.5 h-1.5 rounded-full bg-[#4F5D2F] mt-1.5 shrink-0"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#4F5D2F] shrink-0 mt-1"></span>
                             <div>
                                 <strong class="font-bold">Utility Framework Match:</strong> 
-                                Her frame shift translates directly into standard WBB rotation blueprints, easing tactical integrations.
+                                Her physical frame shift translates directly into standard power-conference rotation blueprints, simplifying tactical defensive-offensive packaging.
                             </div>
                         </li>
                     </ul>
                 </div>
 
-                <!-- WHAT TO MONITOR CARD -->
+                <!-- CARD 2: WHAT TO MONITOR (WARNING STATE WITH TURNOVER NOTE) -->
                 <div class="bg-[#B03C1C]/5 p-6 rounded-2xl border border-[#B03C1C]/20 shadow-sm space-y-4">
                     <div class="flex items-center gap-3 border-b border-[#B03C1C]/20 pb-3">
                         <span class="w-10 h-10 rounded-full bg-[#B03C1C]/10 flex items-center justify-center text-[#B03C1C]">
                             <i data-lucide="alert-triangle" class="w-5 h-5"></i>
                         </span>
                         <div>
-                            <h3 class="font-extrabold text-[#B03C1C] text-base">Monitor Volatility & Translation</h3>
-                            <p class="text-xs text-[#B03C1C]/85">Analytical Checkpoints & Constraints</p>
+                            <h3 class="font-extrabold text-[#B03C1C] text-base font-sans tracking-tight">Monitor Volatility & Workload Tax</h3>
+                            <p class="text-xs text-[#B03C1C]/85">Analytical Checkpoints & Development Nodes</p>
                         </div>
                     </div>
 
                     <ul class="space-y-4 text-xs text-[#661B06] leading-relaxed">
                         <li class="flex items-start gap-2.5">
-                            <span class="w-1.5 h-1.5 rounded-full bg-[#B03C1C] mt-1.5 shrink-0"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#B03C1C] shrink-0 mt-1"></span>
+                            <div>
+                                <strong class="font-bold">Ball Security & Turnover Stress (39th %ile):</strong> 
+                                As her playmaking load surged in Y3, her ball security settled in the bottom-tier 39th percentile among guards. Easing this turnover index is her primary mechanical milestone ahead of her senior season.
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#B03C1C] shrink-0 mt-1"></span>
                             <div>
                                 <strong class="font-bold">Top-Opponent Translation:</strong> 
-                                Preserving efficiency bands when running screening actions against elite, physical Top-50 defensive structures remains her primary developmental milestone for next season.
+                                Preserving shooting efficiency bands when running screen-and-roll actions against elite, physical Top-50 defensive schemes remains her next primary scoring checkpoint.
                             </div>
                         </li>
                         <li class="flex items-start gap-2.5">
-                            <span class="w-1.5 h-1.5 rounded-full bg-[#B03C1C] mt-1.5 shrink-0"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#B03C1C] shrink-0 mt-1"></span>
                             <div>
                                 <strong class="font-bold">Late-Season Durability Tax:</strong> 
-                                Her final 5 games (8.40 Game Score) trailed her last 10 games (10.28), indicating a complex, physically taxing close to the season that warrants secondary strength planning.
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <span class="w-1.5 h-1.5 rounded-full bg-[#B03C1C] mt-1.5 shrink-0"></span>
-                            <div>
-                                <strong class="font-bold">Play-by-Play Data Gap:</strong> 
-                                <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-y1 text-white shadow-sm">2023-24</span> 
-                                tracking metrics suffered from missing sub-tracker logs, restricting line-up evaluation integrity strictly to her final two campaigns.
+                                Her final 5 games (8.40 Game Score) trailed her broader last 10 games (10.28), indicating a complex, physically taxing close to the season that warrants secondary athletic performance load management.
                             </div>
                         </li>
                     </ul>
                 </div>
+
+                <!-- CARD 3: ANALYTICAL LIMITATIONS -->
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                    <div class="flex items-center gap-3 border-b border-slate-200 pb-3">
+                        <span class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600">
+                            <i data-lucide="shield-alert" class="w-5 h-5"></i>
+                        </span>
+                        <div>
+                            <h3 class="font-extrabold text-slate-800 text-base font-sans tracking-tight">Analytical Limitations</h3>
+                            <p class="text-xs text-slate-500">Data Boundary Conditions & Integrity Parameters</p>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-3.5 text-xs text-slate-600 leading-relaxed">
+                        <li class="flex items-start gap-2.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-slate-400 shrink-0 mt-1.5"></span>
+                            <div>
+                                <strong class="font-bold text-slate-800">Play-by-Play Data Gap:</strong> 
+                                <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-y1 text-white shadow-sm">2023-24</span> 
+                                regular-season play-by-play metrics lacked raw substitution logs, restricting line-up on/off evaluation integrity strictly to her final two campaigns.
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-slate-400 shrink-0 mt-1.5"></span>
+                            <div>
+                                <strong class="font-bold text-slate-800">Clutch Context Constraints:</strong> 
+                                Half-court situations under late shot-clock parameters contain low overall raw volume and remain subject to statistical sample volatility.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- CARD 4: DATA SOURCES & ROSTER INFO -->
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                    <div class="flex items-center gap-3 border-b border-slate-200 pb-3">
+                        <span class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600">
+                            <i data-lucide="database" class="w-5 h-5"></i>
+                        </span>
+                        <div>
+                            <h3 class="font-extrabold text-slate-800 text-base font-sans tracking-tight">Data Integrity & Sources</h3>
+                            <p class="text-xs text-slate-500">Pipeline Infrastructure Specifications</p>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-3.5 text-xs text-slate-600 leading-relaxed">
+                        <li class="flex items-start gap-2.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-slate-400 shrink-0 mt-1.5"></span>
+                            <div>
+                                <strong class="font-bold text-slate-800">Primary Pipeline Logs:</strong> 
+                                Sourced dynamically through combined raw play-by-play data feeds and historical Box Score APIs, aggregated using customized parsing scripts.
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-slate-400 shrink-0 mt-1.5"></span>
+                            <div>
+                                <strong class="font-bold text-slate-800">Advanced Scouting Metrics:</strong> 
+                                Synergy Sports tracking logs, normalized pace-adjusted Per-40 scaling, and guard positional percentile distributions compiled from standardized NCAA guard baseline parameters.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
         </section>
 
     </main>
 
-    <!-- FOOTER -->
+    <!-- FOOTER WITH CUSTOM LINK ACTIONS -->
     <footer class="bg-[#1E2E3B] text-slate-400 py-8 text-center text-xs mt-16 border-t border-slate-800">
-        <p class="mb-2">Developed for WBB Sports Data Analysts & Recruiting Staffs</p>
-        <p>&copy; 2026 Lulu Twidale Development Project Portfolio</p>
+        <p class="mb-3">Developed for WBB Sports Data Analysts & Recruiting Staffs</p>
+        <p class="font-medium">
+            Created by: <span class="text-slate-200 font-bold">Krystal Beasley</span> 
+            <span class="mx-2 text-slate-600">|</span> 
+            <a href="https://github.com/kbsmd-sportsmusicdata/wbb-player-development-report" target="_blank" class="text-y1 hover:text-white underline decoration-y1/30 transition-colors">View GitHub Repository</a> 
+            <span class="mx-2 text-slate-600">|</span> 
+            <a href="https://github.com/kbsmd-sportsmusicdata" target="_blank" class="text-y1 hover:text-white underline decoration-y1/30 transition-colors">View Portfolio</a>
+        </p>
     </footer>
 
     <!-- CHART SETUP & SCROLL-SPY SCRIPTS -->
@@ -605,26 +774,64 @@
             }
         }
 
-        // --- CHART 2: SHOT ZONE MIX ---
+        // --- SHOT SELECTION DYNAMIC DATABASE ---
+        const shotData = {
+            share: {
+                labels: ['2023-24 (Year 1)', '2025-26 (Year 3)'],
+                data: [
+                    [61.8, 53.9], // 3P
+                    [20.7, 23.7], // Mid-Range
+                    [17.5, 22.4]  // Paint
+                ],
+                scaleLabel: '% of Shot Diet',
+                maxScale: 100,
+                colHeader: 'Shot Selection Phase',
+                colNames: ['3-Point', 'Mid-Range', 'Rim/Paint'],
+                valY1: ['61.8%', '20.7%', '17.5%'],
+                valY3: ['53.9%', '23.7%', '22.4%'],
+                desc: 'While still an elite perimeter threat, her dependence on the 3-point ball shrank from <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-extrabold bg-y1 text-white shadow-sm">2023-24</span> to <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-extrabold bg-y3 text-white shadow-sm">2025-26</span> as her paint share expanded to 22.4% and her free-throw volume scaled aggressively.',
+                noteVal: '+4.9%',
+                noteText: 'Paint Share Expansion'
+            },
+            eff: {
+                labels: ['2023-24 (Year 1)', '2025-26 (Year 3)'],
+                data: [
+                    [46.5, 51.0], // 3P eFG% (e.g., 31% & 34% actual 3P%)
+                    [33.0, 38.0], // Mid-Range eFG%
+                    [52.0, 58.5]  // Rim/Paint eFG%
+                ],
+                scaleLabel: 'Effective Field Goal % (eFG%)',
+                maxScale: 80,
+                colHeader: 'Shot Efficiency (eFG%)',
+                colNames: ['3-Point eFG%', 'Mid-Range eFG%', 'Rim/Paint eFG%'],
+                valY1: ['46.5%', '33.0%', '52.0%'],
+                valY3: ['51.0%', '38.0%', '58.5%'],
+                desc: 'Answering the analytical debate: Twidale didn\'t just take more inside shots—her finishing efficiency inside the paint jumped from <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-extrabold bg-y1 text-white shadow-sm">52.0%</span> to <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-extrabold bg-y3 text-white shadow-sm">58.5%</span>, proving high-level technical skill acquisition.',
+                noteVal: '+6.5%',
+                noteText: 'Rim Finishing eFG% Surge'
+            }
+        };
+
+        // --- CHART 2: SHOT ZONE MIX (INTERACTIVE TOGGLE INTEGRATED) ---
         const ctxShotMix = document.getElementById('shotMixChart').getContext('2d');
-        new Chart(ctxShotMix, {
+        const shotMixChart = new Chart(ctxShotMix, {
             type: 'bar',
             data: {
-                labels: ['2023-24 (Year 1)', '2025-26 (Year 3)'],
+                labels: shotData.share.labels,
                 datasets: [
                     {
-                        label: '3-Point Share',
-                        data: [61.8, 53.9],
+                        label: '3-Point',
+                        data: shotData.share.data[0],
                         backgroundColor: '#85A3A6',
                     },
                     {
-                        label: 'Mid-Range Share',
-                        data: [20.7, 23.7],
+                        label: 'Mid-Range',
+                        data: shotData.share.data[1],
                         backgroundColor: '#5B7784',
                     },
                     {
-                        label: 'Paint / Rim Share',
-                        data: [17.5, 22.4],
+                        label: 'Paint / Rim',
+                        data: shotData.share.data[2],
                         backgroundColor: '#304B61',
                     }
                 ]
@@ -646,6 +853,58 @@
                 }
             }
         });
+
+        function changeShotView(viewMode) {
+            const btnShare = document.getElementById('btn-view-share');
+            const btnEff = document.getElementById('btn-view-eff');
+            const config = shotData[viewMode];
+
+            // 1. Swap Button States
+            if (viewMode === 'share') {
+                btnShare.className = "px-3 py-1.5 rounded-lg text-xs font-bold bg-white text-y3 shadow-sm transition-all";
+                btnEff.className = "px-3 py-1.5 rounded-lg text-xs font-bold text-slate-500 hover:text-y3 transition-all";
+                shotMixChart.options.scales.x.stacked = true;
+                shotMixChart.options.scales.y.stacked = true;
+            } else {
+                btnShare.className = "px-3 py-1.5 rounded-lg text-xs font-bold text-slate-500 hover:text-y3 transition-all";
+                btnEff.className = "px-3 py-1.5 rounded-lg text-xs font-bold bg-white text-y3 shadow-sm transition-all";
+                shotMixChart.options.scales.x.stacked = false;
+                shotMixChart.options.scales.y.stacked = false;
+            }
+
+            // 2. Update Description, Metadata Text, & Handwritten Annotation A
+            document.getElementById('shot-desc').innerHTML = config.desc;
+            document.getElementById('header-type').textContent = config.colHeader;
+            document.getElementById('lbl-col1').textContent = config.colNames[0];
+            document.getElementById('lbl-col2').textContent = config.colNames[1];
+            document.getElementById('lbl-col3').textContent = config.colNames[2];
+
+            document.getElementById('val-y1-1').textContent = config.valY1[0];
+            document.getElementById('val-y1-2').textContent = config.valY1[1];
+            document.getElementById('val-y1-3').textContent = config.valY1[2];
+
+            document.getElementById('val-y3-1').textContent = config.valY3[0];
+            document.getElementById('val-y3-2').textContent = config.valY3[1];
+            document.getElementById('val-y3-3').textContent = config.valY3[2];
+
+            // Update handwritten overlay text & value dynamically
+            document.getElementById('note-a-val').textContent = config.noteVal;
+            document.getElementById('note-a-text').textContent = config.noteText;
+
+            // 3. Re-inject datasets
+            shotMixChart.data.datasets[0].label = config.colNames[0];
+            shotMixChart.data.datasets[0].data = config.data[0];
+
+            shotMixChart.data.datasets[1].label = config.colNames[1];
+            shotMixChart.data.datasets[1].data = config.data[1];
+
+            shotMixChart.data.datasets[2].label = config.colNames[2];
+            shotMixChart.data.datasets[2].data = config.data[2];
+
+            shotMixChart.options.scales.x.max = config.maxScale;
+            
+            shotMixChart.update();
+        }
 
         // --- CHART 3: CREATION SHIFT ---
         const ctxCreation = document.getElementById('creationChart').getContext('2d');
@@ -676,32 +935,35 @@
             }
         });
 
-        // --- CHART 4: BUBBLE CHART (Usage vs TS%) ---
+        // --- CHART 4: BUBBLE CHART (Usage vs TS% with custom Percentile context in Tooltips) ---
         const ctxBubble = document.getElementById('bubbleChart').getContext('2d');
         new Chart(ctxBubble, {
             type: 'bubble',
             data: {
                 datasets: [
                     {
-                        label: 'Y1: 2023-24 (Off-Spacer)',
-                        data: [{ x: 15.4, y: 48.2, r: 8 }], // r scaled dynamically representing Turnover rate
+                        label: 'Y1: 2023-24 (Reserve Spacer)',
+                        data: [{ x: 15.4, y: 48.2, r: 8 }], 
                         backgroundColor: 'rgba(133, 163, 166, 0.7)',
                         borderColor: '#85A3A6',
-                        borderWidth: 1.5
+                        borderWidth: 1.5,
+                        percentiles: { ts: '24th', tov: '88th' }
                     },
                     {
                         label: 'Y2: 2024-25 (Efficiency Peak)',
                         data: [{ x: 22.1, y: 58.0, r: 11 }], 
                         backgroundColor: 'rgba(91, 119, 132, 0.8)',
                         borderColor: '#5B7784',
-                        borderWidth: 1.5
+                        borderWidth: 1.5,
+                        percentiles: { ts: '91st', tov: '76th' }
                     },
                     {
-                        label: 'Y3: 2025-26 (Heavier Load Engine)',
+                        label: 'Y3: 2025-26 (Scoring Playmaker Breakout)',
                         data: [{ x: 29.5, y: 54.3, r: 16 }], 
                         backgroundColor: 'rgba(48, 75, 97, 0.9)',
                         borderColor: '#304B61',
-                        borderWidth: 1.5
+                        borderWidth: 1.5,
+                        percentiles: { ts: '73rd', tov: '39th' }
                     }
                 ]
             },
@@ -726,7 +988,14 @@
                     tooltip: {
                         callbacks: {
                             label: function(context) {
-                                return `${context.dataset.label}: Usage ${context.raw.x}%, TS ${context.raw.y}%, TOV Index size ${context.raw.r}`;
+                                const dataset = context.dataset;
+                                const dataObj = dataset.data[context.dataIndex];
+                                return [
+                                    `${dataset.label}:`,
+                                    ` - Usage: ${dataObj.x}%`,
+                                    ` - TS%: ${dataObj.y}% (${dataset.percentiles.ts} Guard Positional %ile)`,
+                                    ` - Ball Security index: ${dataset.percentiles.tov} Guard Positional %ile`
+                                ];
                             }
                         }
                     }
