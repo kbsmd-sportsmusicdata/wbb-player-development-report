@@ -82,7 +82,7 @@
     </svg>
 
     <!-- HERO HEADER: SCOUTING CARD PROFILE -->
-    <header class="bg-gradient-to-r from-[#1E2E3B] via-[#304B61] to-[#456984] text-white py-8 px-6 shadow-md border-b-4 border-y3">
+    <header class="bg-gradient-to-r from-[#1E2E3B] via-[#304B61] to-[#456984] text-white py-8 px-6 shadow-md border-b border-y3">
         <div class="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-8">
             
             <!-- LEFT: Profile Photo & Core Demographics -->
@@ -187,6 +187,34 @@
 
         </div>
     </header>
+
+    <!-- WPBA DRAFT LENS BANNER (Framework Integration) -->
+    <div class="bg-gradient-to-r from-[#172430] to-[#243545] text-white py-4 px-6 border-b-4 border-y3/30 shadow-inner">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <span class="px-2.5 py-1 bg-[#FDB515]/20 text-[#FDB515] rounded-lg font-black text-[10px] tracking-wider uppercase border border-[#FDB515]/30">WPBA Draft Lens</span>
+                <div>
+                    <h3 class="text-sm font-black tracking-tight text-slate-100">Scouting Trajectory & Draft Fit Matrix</h3>
+                    <p class="text-[11px] text-slate-400">Standardized translation profiling for power-conference prospects</p>
+                </div>
+            </div>
+            <!-- Framework Badges Grid -->
+            <div class="flex flex-wrap gap-2 text-[10px] font-bold">
+                <span class="px-2.5 py-1 bg-slate-800/80 rounded-lg border border-slate-700/60 flex items-center gap-1.5">
+                    🏀 Archetype: <span class="text-y1">Secondary Creator</span>
+                </span>
+                <span class="px-2.5 py-1 bg-slate-800/80 rounded-lg border border-slate-700/60 flex items-center gap-1.5">
+                    📈 Trajectory: <span class="text-[#B6C49C]">Linear Grower / Skill Expander</span>
+                </span>
+                <span class="px-2.5 py-1 bg-slate-800/80 rounded-lg border border-slate-700/60 flex items-center gap-1.5">
+                    📊 Draft Fit: <span class="text-y1">Role Compression Candidate</span>
+                </span>
+                <span class="px-2.5 py-1 bg-[#FDB515]/10 rounded-lg border border-[#FDB515]/30 flex items-center gap-1.5 text-[#FDB515]">
+                    🎯 Projection: <span class="font-extrabold">Late 2nd / PFA</span>
+                </span>
+            </div>
+        </div>
+    </div>
 
     <!-- EXECUTIVE SUMMARY BANNER: CORE STRUT SIGNALS -->
     <div class="bg-slate-100 py-6 px-6 border-b border-slate-200">
@@ -293,6 +321,10 @@
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div class="lg:col-span-7 space-y-4">
+                    <div class="flex items-center gap-2">
+                        <span class="px-2 py-0.5 bg-[#B6C49C]/20 text-[#4F5D2F] text-[10px] font-black uppercase rounded border border-[#B6C49C]/30 flex items-center gap-1">📈 Linear Grower</span>
+                        <span class="px-2 py-0.5 bg-y1/20 text-y3 text-[10px] font-black uppercase rounded border border-y1/30 flex items-center gap-1">🔄 Skill Expander</span>
+                    </div>
                     <h3 class="text-lg font-bold text-slate-800 leading-tight">A Complete Three-Year Identity Shift</h3>
                     
                     <p class="text-slate-600 leading-relaxed text-sm">
@@ -383,12 +415,12 @@
                         </div>
                     </div>
 
-                    <!-- Chart Container with Repositioned Handwritten Coaching Overlay (Shifted down, text/elements changed to green) -->
+                    <!-- Chart Container with Repositioned Handwritten Coaching Overlay (Sitting directly in safe space at bottom-right) -->
                     <div class="h-[220px] w-full flex items-center justify-center relative bg-white/50 rounded-2xl border border-dashed border-slate-150 p-2">
                         <canvas id="shotMixChart"></canvas>
                         
                         <!-- REPOSITIONED & COLOR-UPDATED HANDWRITTEN COACHING NOTE FOR VISUAL A (Now closer to bottom horizontal bar, styled in green) -->
-                        <div id="coach-note-a" class="absolute bottom-2 right-2 pointer-events-none transform rotate-[-1.5deg] bg-yellow-50/95 border border-yellow-200/80 px-2.5 py-1.5 rounded-lg shadow-md max-w-[155px] text-center transition-all duration-300 z-10">
+                        <div id="coach-note-a" class="absolute bottom-2 right-2 pointer-events-none transform rotate-[-1.5deg] bg-yellow-50/95 border border-yellow-200/80 px-2.5 py-1.5 rounded-lg shadow-md max-w-[150px] text-center transition-all duration-300 z-10">
                             <div class="flex items-center justify-center gap-1 text-[#4F5D2F]">
                                 <i data-lucide="trending-up" class="w-3.5 h-3.5 shrink-0 stroke-[3px]"></i>
                                 <span id="note-a-val" class="font-marker text-xs leading-none">+4.9%</span>
@@ -421,12 +453,12 @@
                         </div>
                     </div>
 
-                    <!-- Chart Container with Elevated Handwritten Coaching Overlay (Swapped to directional trending-up icon, colored in green) -->
+                    <!-- Chart Container with Handwritten Coaching Overlay (Shifted to Center-Top Bounding Box per selection) -->
                     <div class="h-[220px] w-full flex items-center justify-center relative bg-white/50 rounded-2xl border border-dashed border-slate-150 p-2">
                         <canvas id="creationChart"></canvas>
                         
-                        <!-- ELEVATED, RE-ICONED, & GREEN-COLORED HANDWRITTEN COACHING NOTE FOR VISUAL B -->
-                        <div id="coach-note-b" class="absolute -top-3 -right-1 pointer-events-none transform rotate-[-1deg] bg-yellow-50/95 border border-yellow-200/80 px-2.5 py-1.5 rounded-lg shadow-md max-w-[155px] text-center z-10">
+                        <!-- SHIFTED TO CENTER-TOP AREA OVERLAY (Perfect matching to bounding box selection coordinates) -->
+                        <div id="coach-note-b" class="absolute top-2 left-1/2 -translate-x-1/2 pointer-events-none transform rotate-[2deg] bg-yellow-50/95 border border-yellow-200/80 px-2.5 py-1.5 rounded-lg shadow-md max-w-[150px] text-center z-10">
                             <div class="flex items-center justify-center gap-1 text-[#4F5D2F]">
                                 <i data-lucide="trending-up" class="w-3.5 h-3.5 shrink-0 stroke-[3px]"></i>
                                 <span class="font-marker text-xs leading-none">+13.6%</span>
@@ -435,6 +467,74 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- NEW OFFENSIVE EXPANSION SCOUTING MATRIX (Framework Integration) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+                
+                <!-- Card 1: Foul-Drawing & Rim/Contact Pressure -->
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/60 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-2 mb-2 text-[#4F5D2F]">
+                            <i data-lucide="target" class="w-4 h-4 shrink-0"></i>
+                            <h4 class="text-xs font-black uppercase tracking-wider text-slate-700">⚑ Contact & Rim Pressure</h4>
+                        </div>
+                        <p class="text-slate-600 text-[11px] leading-relaxed mb-4">
+                            Her physical maturation is defined by contact hunting. Her Free Throw Rate (FTr) scaled from <strong>13.7%</strong> to <strong>20.5%</strong>, while Free Throw Attempts climbed to <strong>3.6 per 40</strong>.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2 text-center">
+                        <div class="bg-white p-2 rounded-xl border border-slate-200/60">
+                            <span class="text-[10px] text-slate-400 font-bold block uppercase">Y1 &rarr; Y3 FTr</span>
+                            <span class="text-sm font-black text-y3">13.7% &rarr; 20.5%</span>
+                        </div>
+                        <div class="bg-white p-2 rounded-xl border border-slate-200/60">
+                            <span class="text-[10px] text-slate-400 font-bold block uppercase">FTA / 40</span>
+                            <span class="text-sm font-black text-y3">2.1 &rarr; 3.6</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Secondary Creator & Role Translation -->
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/60 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-2 mb-2 text-y3">
+                            <i data-lucide="globe" class="w-4 h-4 shrink-0"></i>
+                            <h4 class="text-xs font-black uppercase tracking-wider text-slate-700">🌐 Role Translation Fit</h4>
+                        </div>
+                        <p class="text-slate-600 text-[11px] leading-relaxed mb-4">
+                            Twidale profiles as a premier <strong>Role Compression Candidate</strong>. While anchoring Cal's primary offense, her projection at the next level points to a scalable secondary attacking playmaker.
+                        </p>
+                    </div>
+                    <div class="bg-white p-2.5 rounded-xl border border-slate-200/60 text-center">
+                        <span class="text-[10px] text-slate-400 font-bold block uppercase">Scouting Projection Fit</span>
+                        <span class="text-xs font-bold text-y3">Perimeter Spacer &amp; Closeout Driver</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: High-Major ACC Context -->
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/60 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-2 mb-2 text-[#FDB515]">
+                            <i data-lucide="award" class="w-4 h-4 shrink-0"></i>
+                            <h4 class="text-xs font-black uppercase tracking-wider text-slate-700">🌐 ACC Conference Context</h4>
+                        </div>
+                        <p class="text-slate-600 text-[11px] leading-relaxed mb-4">
+                            Her production scales across high-major structures. In ACC play, her scoring output held at <strong>17.5 PTS/40</strong>, while her elite free-throw rate (<strong>87.9%</strong>) led the entire conference.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2 text-center">
+                        <div class="bg-white p-2 rounded-xl border border-slate-200/60">
+                            <span class="text-[10px] text-slate-400 font-bold block uppercase">ACC Scoring</span>
+                            <span class="text-sm font-black text-[#FDB515] filter brightness-90">17.5 PTS</span>
+                        </div>
+                        <div class="bg-white p-2 rounded-xl border border-slate-200/60">
+                            <span class="text-[10px] text-slate-400 font-bold block uppercase">ACC FT% (1st)</span>
+                            <span class="text-sm font-black text-[#FDB515] filter brightness-90">87.9%</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -445,7 +545,7 @@
                 <p class="text-sm text-slate-500 mt-2">Decisive Efficiency vs. Scaling Usage Metric Map</p>
             </div>
 
-            <!-- Context Percentiles Alert Banner (Added fire emoji to the 91st Percentile indicator) -->
+            <!-- Context Percentiles Alert Banner (With Fire Emoji for High Markers) -->
             <div class="bg-slate-50 border border-slate-200/60 p-4 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
                 <div class="flex items-center gap-2.5">
                     <span class="p-2 bg-y3/10 text-y3 rounded-xl">
@@ -479,7 +579,7 @@
                     <!-- Explanatory Context Cards highlighting Percentile Meanings -->
                     <div class="space-y-3 pt-2">
                         <div class="p-3 bg-emerald-50/50 rounded-xl border border-emerald-100 flex gap-2.5 items-start">
-                            <span class="text-[#4F5D2F] mt-0.5 shrink-0 font-bold text-xs bg-[#4F5D2F]/10 px-1.5 py-0.5 rounded font-sans">91st</span>
+                            <span class="text-[#4F5D2F] mt-0.5 shrink-0 font-bold text-xs bg-[#4F5D2F]/10 px-1.5 py-0.5 rounded font-sans">91st 🔥</span>
                             <div>
                                 <h4 class="text-xs font-bold text-slate-800 font-sans">Sophomore Efficiency Peak</h4>
                                 <p class="text-[11px] text-slate-600 mt-0.5 leading-relaxed">Her 58.0% TS represents elite, national-tier scoring productivity while operating primarily inside off-ball spacing actions.</p>
@@ -513,6 +613,10 @@
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div class="lg:col-span-5 space-y-4">
+                    <div class="flex items-center gap-2">
+                        <span class="px-2 py-0.5 bg-y3/10 text-y3 text-[10px] font-black uppercase rounded border border-y3/20 flex items-center gap-1">🛡️ Containment Signal</span>
+                        <span class="px-2 py-0.5 bg-[#4F5D2F]/10 text-[#4F5D2F] text-[10px] font-black uppercase rounded border border-[#4F5D2F]/20 flex items-center gap-1">🛡️ Two-Way Value</span>
+                    </div>
                     <h3 class="text-lg font-bold text-slate-800 font-sans tracking-tight">
                         <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-extrabold bg-y2 text-white shadow-sm">2024-25</span> 
                         Offensive Lift Transitions to 
@@ -555,14 +659,14 @@
             <!-- Modern 2x2 Grid Layout for Visual Continuity and High Informational Density -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 
-                <!-- CARD 1: WHAT TO TRUST (SUCCESS STATE) -->
+                <!-- CARD 1: WHAT TO TRUST (SUCCESS STATE) / DRAFT PROJECTION BUY -->
                 <div class="bg-[#4F5D2F]/5 p-6 rounded-2xl border border-[#4F5D2F]/20 shadow-sm space-y-4">
                     <div class="flex items-center gap-3 border-b border-[#4F5D2F]/20 pb-3">
                         <span class="w-10 h-10 rounded-full bg-[#4F5D2F]/10 flex items-center justify-center text-[#4F5D2F]">
                             <i data-lucide="check-circle" class="w-5 h-5"></i>
                         </span>
                         <div>
-                            <h3 class="font-extrabold text-[#4F5D2F] text-base font-sans tracking-tight">Trust the Structural Role Expansion</h3>
+                            <h3 class="font-extrabold text-[#4F5D2F] text-base font-sans tracking-tight">🟢 Draft / Buy: The Secondary Creator Case</h3>
                             <p class="text-xs text-[#4F5D2F]/80">Validated Multi-Season Constants</p>
                         </div>
                     </div>
@@ -592,14 +696,14 @@
                     </ul>
                 </div>
 
-                <!-- CARD 2: WHAT TO MONITOR (WARNING STATE WITH TURNOVER NOTE) -->
+                <!-- CARD 2: WHAT TO MONITOR (WARNING STATE WITH TURNOVER NOTE) / SCOUTING MONITOR -->
                 <div class="bg-[#B03C1C]/5 p-6 rounded-2xl border border-[#B03C1C]/20 shadow-sm space-y-4">
                     <div class="flex items-center gap-3 border-b border-[#B03C1C]/20 pb-3">
                         <span class="w-10 h-10 rounded-full bg-[#B03C1C]/10 flex items-center justify-center text-[#B03C1C]">
                             <i data-lucide="alert-triangle" class="w-5 h-5"></i>
                         </span>
                         <div>
-                            <h3 class="font-extrabold text-[#B03C1C] text-base font-sans tracking-tight">Monitor Volatility & Workload Tax</h3>
+                            <h3 class="font-extrabold text-[#B03C1C] text-base font-sans tracking-tight">🟡 Hold / Monitor: Physical Strain & Playmaking Stress</h3>
                             <p class="text-xs text-[#B03C1C]/85">Analytical Checkpoints & Development Nodes</p>
                         </div>
                     </div>
@@ -636,7 +740,7 @@
                             <i data-lucide="shield-alert" class="w-5 h-5"></i>
                         </span>
                         <div>
-                            <h3 class="font-extrabold text-slate-800 text-base font-sans tracking-tight">Analytical Limitations</h3>
+                            <h3 class="font-extrabold text-slate-800 text-base font-sans tracking-tight">🛑 Analytical Limitations</h3>
                             <p class="text-xs text-slate-500">Data Boundary Conditions & Integrity Parameters</p>
                         </div>
                     </div>
@@ -683,13 +787,43 @@
                         <li class="flex items-start gap-2.5">
                             <span class="w-1.5 h-1.5 rounded-full bg-slate-400 shrink-0 mt-1.5"></span>
                             <div>
+                                <!-- Sourced from standardized ESPN and NCAA guard parameters -->
                                 <strong class="font-bold text-slate-800">Advanced Scouting Metrics:</strong> 
-                                Synergy Sports tracking logs, normalized pace-adjusted Per-40 scaling, and guard positional percentile distributions compiled from standardized NCAA guard baseline parameters.
+                                Normalized pace-adjusted Per-40 scaling, and guard positional percentile distributions compiled from standardized ESPN and NCAA guard baseline parameters.
                             </div>
                         </li>
                     </ul>
                 </div>
 
+            </div>
+
+            <!-- COLLAPSIBLE DATA DICTIONARY -->
+            <div class="pt-4">
+                <details class="group bg-slate-100 rounded-2xl border border-slate-200/60 p-4 [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex items-center justify-between cursor-pointer focus:outline-none">
+                        <div class="flex items-center gap-2 text-xs font-bold text-slate-700">
+                            <i data-lucide="book-open" class="w-4 h-4 text-y3"></i>
+                            <span>📓 Open Data Dictionary</span>
+                        </div>
+                        <span class="text-slate-400 transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </span>
+                    </summary>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4 pt-4 border-t border-slate-200 text-[11px] leading-relaxed text-slate-600">
+                        <div>
+                            <strong class="text-slate-800 block font-bold mb-1">Role Compression</strong>
+                            The structural transition where a high-usage college primary engine scales down to an efficient, lower-usage secondary pro contributor without losing production impact.
+                        </div>
+                        <div>
+                            <strong class="text-slate-800 block font-bold mb-1">Translation Signal</strong>
+                            Specific statistical benchmarks (e.g. FTr, unassisted make rates) that demonstrate high mathematical stability when projecting outcomes from NCAA to professional pacing.
+                        </div>
+                        <div>
+                            <strong class="text-slate-800 block font-bold mb-1">Turnover Proxy %</strong>
+                            An advanced metric mapping structural playmaking volume against ball security threshold, isolating player-handling risk profile under defensive blitzes.
+                        </div>
+                    </div>
+                </details>
             </div>
         </section>
 
@@ -840,6 +974,12 @@
                 indexAxis: 'y',
                 responsive: true,
                 maintainAspectRatio: false,
+                // Layout Padding configured to separate text overlay markers from horizontal bars
+                layout: {
+                    padding: {
+                        right: 140
+                    }
+                },
                 scales: {
                     x: {
                         stacked: true,
@@ -906,7 +1046,7 @@
             shotMixChart.update();
         }
 
-        // --- CHART 3: CREATION SHIFT ---
+        // --- CHART 3: CREATION SHIFT (Padding set to zero for proper centering under note) ---
         const ctxCreation = document.getElementById('creationChart').getContext('2d');
         new Chart(ctxCreation, {
             type: 'bar',
@@ -923,6 +1063,12 @@
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
+                // Removed right padding to naturally center bars under center-positioned annotation note
+                layout: {
+                    padding: {
+                        right: 0
+                    }
+                },
                 scales: {
                     y: {
                         max: 50,
@@ -955,7 +1101,7 @@
                         backgroundColor: 'rgba(91, 119, 132, 0.8)',
                         borderColor: '#5B7784',
                         borderWidth: 1.5,
-                        percentiles: { ts: '91st', tov: '76th' }
+                        percentiles: { ts: '91st 🔥', tov: '76th' }
                     },
                     {
                         label: 'Y3: 2025-26 (Scoring Playmaker Breakout)',
